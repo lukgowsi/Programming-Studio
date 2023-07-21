@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+    <link id = "mainstyle" href="./index.css" rel="stylesheet">
+    <title>Projects</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <script src="./index.js"></script>
+</head>
+
+<body id = "body-projects">
+    <nav class="topnav">
+        <ul>
+            <li id = "socials">Socials:</li>
+            <a href="https://www.linkedin.com/in/lucas-ho-847bb4251/" target = _blank id = "linkedin"><li>LinkedIn</li></a>
+            <a href="https://github.com/lukgowsi" target = _blank id = "gmail"><li>GitHub</li></a>
+            <a href="https://www.facebook.com/lucas.ho.7524" target = _blank id = "facebook"><li>Facebook</li></a>
+            <a href="https://www.instagram.com/lucas._.ho/" target = _blank id = "ig"><li>Instagram</li></a>
+            <button class="toggle-button" id = "togglething" type="button" onclick="load_style()">Toggle</button>
+        </ul>
+    </nav>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="index.html" id="Home">Home <i class="fa fa-home"></i></a>
+        <a href="projects.html" id="Projects">Projects </a>
+        <a href="resume.html" id="Resume">Resume</a>
+        <a href="service.html" id="Service">Service</a>
+        <a href="chat.html" id="Chat">GPT</a>
+    </div>
+
+    <div class = "label">
+        <h1>Projects</h1>
+
+    </div>
+
+    <div class="container">
+        <div class="projects-circuit">
+            <a href="https://www.youtube.com/watch?v=7PiPKYXt4-o" target=_blank>
+                <img src="circuit.jpg" id = "circuit">
+            </a>
+            <p> This is a traffic controller made with RBG leds and a Rapberry Pi. There is a button that sends an interrupt to the traffic controller to change the lights. The two lights represent the traffic lights for the pedestrians and the traffic lights for cars. When the light flashes yellow, it indicates that the traffic light will turn red soon.</p>
+        </div>
+
+        <div class="projects-flowers">
+            <a href="https://github.com/davidliu2024/TAMUHack2022-EPIC" target=_blank>
+                <img src="flowers.png" id = "flower">
+            </a>
+            <p>This is a web application that allows users to select a state and upload a picture of a flower or plant and allows them to give a short description along with the plant. This is a project done with a team for hackathon where html, css and Python were all utilized in the construction of the program.</p>
+        </div>
+    </div>
+
+</body>
+
+</html>

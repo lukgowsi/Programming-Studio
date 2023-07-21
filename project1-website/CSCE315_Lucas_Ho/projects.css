@@ -1,0 +1,150 @@
+#body {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(to top left, #87cefa, #99d2da);
+    background-repeat: cover;
+    height: 100vh;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18pt;
+    flex-direction: column;
+
+  }
+
+  #mySidenav a {
+    position: absolute; /* Position them relative to the browser window */
+    left: -90px; /* Position them outside of the screen */
+    transition: 0.3s; /* Add transition on hover */
+    padding: 15px; /* 15px padding */
+    width: 110px; /* Set a specific width */
+    text-decoration: none; /* Remove underline */
+    font-size: 20px; /* Increase font size */
+    color: white; /* White text color */
+    border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
+  }
+  
+  #mySidenav a:hover {
+    left: 0; /* On mouse-over, make the elements appear as they should */
+  }
+  
+  /* The about link: 20px from the top with a green background */
+  #Home {
+    top: 90px;
+    background-color: #A8E4A0;
+    border: solid;
+  }
+  
+  #Projects {
+    top: 160px;
+    background-color: transparent; /* Blue */
+    border: solid;
+  }
+  
+  #Resume {
+    top: 230px;
+    background-color: #FE7979; /* Red */
+    border: solid;
+  }
+  
+  #Service {
+    top: 300px;
+    background-color: #FEBD79; /* Orange */
+    border: solid;
+  }
+
+  #Chat {
+    top: 370px;
+    background-color: #EF6FF3; /* Pink */
+    border: solid;
+  }
+
+  .topnav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    overflow: hidden;
+  }
+  
+  .topnav ul {
+    list-style-type: none;
+    display: inline;
+    font-size: 17px;
+  }
+  
+  .topnav li {
+    float: left; 
+    padding: 1em;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    color: #f2f2f2;
+    text-decoration: none;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav li:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  #socials:hover { 
+    color: white;
+    background-color: #333;
+  }
+  
+  #linkedin:hover { 
+    background: #ddd;
+    color: black;
+  }
+  
+  #gmail:hover { 
+    background: #ddd;
+    color: black;
+  }
+  
+  #facebook:hover { 
+    background: #ddd;
+    color: black;
+  }
+  
+  #ig:hover { 
+    background: #ddd;
+    color: black;
+  }
+
+  #circuit{
+    width: 80%;
+    margin-left: 14%;
+  }
+
+  #flower{
+    width: 56%;
+    margin-left: 4%;
+  }
+
+  .heh{
+    margin-top: 5%;
+
+  }
+  
+.project-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.projects-circuit {
+  width: 40%;
+  height: 80vh;
+  /* border: 5px solid black; */
+}
+
+.projects-flowers {
+  width: 40%;
+  height: 80vh;
+  /* border: 5px solid black; */
+  margin-top: 2%;
+}

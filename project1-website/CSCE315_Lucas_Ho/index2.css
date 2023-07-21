@@ -1,0 +1,307 @@
+#body-index {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    background-repeat: cover;
+    height: 100vh;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 18pt;
+    flex-direction: column;
+
+  }
+
+  #body-projects{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #333;
+    background-repeat: cover;
+    height: 100vh;
+    color: white;
+    font-family: 'Late', sans-serif;
+    font-size: 18pt;
+    flex-direction: column;
+
+  }
+
+  #body-resume{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    background-repeat: cover;
+    height: 100vh;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 18pt;
+    flex-direction: column;
+
+  }
+
+  #body-service{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    background-repeat: cover;
+    height: 100vh;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 18pt;
+    flex-direction: column;
+
+  }
+  
+  #body-chat{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to top left, #F79FF9, #F68BF9);
+    background-repeat: cover;
+    height: 100vh;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18pt;
+    flex-direction: column;
+  }
+
+  #mySidenav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: #EF6FF3;
+    overflow: hidden;
+  }
+  
+  #mySidenav ul {
+    list-style-type: none;
+    display: inline;
+    font-size: 17px;
+  }
+  
+  #mySidenav li {
+    float: left; 
+    padding: 1em;
+  }
+  
+  /* Style the links inside the navigation bar */
+  #mySidenav a {
+    color: #f2f2f2;
+    text-decoration: none;
+  }
+  
+  /* Change the color of links on hover */
+  #mySidenav li:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  
+  #Home:hover { 
+    background: #ddd;
+    color: black;
+  }
+  
+  #Projects:hover { 
+    background: #ddd;
+    color: black;
+  }
+  
+  #Resume:hover { 
+    background: #ddd;
+    color: black;
+  }
+  
+  #Service:hover { 
+    background: #ddd;
+    color: black;
+  }
+  #Chat:hover { 
+    background: #ddd;
+    color: black;
+  }
+  
+  
+.topnav {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #EF6FF3;
+  overflow: hidden;
+}
+
+.topnav ul {
+  list-style-type: none;
+  display: inline;
+  font-size: 17px;
+}
+
+.topnav li {
+  float: left; 
+  padding: 1em;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  color: #f2f2f2;
+  text-decoration: none;
+}
+
+/* Change the color of links on hover */
+.topnav li:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#socials:hover { 
+  color: white;
+  background-color: #333;
+}
+
+#linkedin:hover { 
+  background: #ddd;
+  color: black;
+}
+
+#gmail:hover { 
+  background: #ddd;
+  color: black;
+}
+
+#facebook:hover { 
+  background: #ddd;
+  color: black;
+}
+
+#ig:hover { 
+  background: #ddd;
+  color: black;
+}
+
+#togglething{
+  float: right;
+  margin-top: 1%;
+  margin-right: 1%;
+}
+
+#pic{
+  width: 14%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+#circuit{
+  width: 80%;
+  margin-left: 14%;
+}
+
+#flower{
+  width: 56%;
+  margin-left: 4%;
+}
+
+.label{
+  margin-top: 9%;
+
+}
+
+.resume{
+
+  margin-bottom:auto;
+}
+
+.service{
+  margin-top:1%;
+}
+
+.container {
+width: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.index-text{
+  width: 70%; 
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.index-image{
+  width: 10%;
+  height: 30vh;
+}
+
+.projects-circuit {
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    height: 40vh;
+    justify-content: center;
+}
+
+
+.projects-flowers {
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    height: 40vh;
+    margin-bottom:10%;
+    justify-content: center;
+}
+
+.resume-resume{
+width: 80vh;
+display: flex;
+flex-direction: row;
+margin-left: auto;
+margin-right: auto;
+}
+
+.resume-technical{
+width: 100%;
+height: 80vh;
+/* margin-bottom:10%; */
+justify-content: center;
+}
+
+.service-epic{
+width: 100%;
+height: 10vh;
+display: flex;
+flex-direction: row;
+margin-bottom:10%
+}
+
+#epic{
+  max-width: 100%;
+  height:auto;
+}
+
+.service-concessions{
+width: 100%;
+height: 10vh;
+display: flex;
+flex-direction: row;
+margin-bottom:10%
+}
+
+#concessions{
+  width: 100%;
+}
+
+.service-big-event{
+width: 100%;
+height: 20vh;
+display: flex;
+flex-direction: row;
+margin-bottom:15%
+}
+
+#bigevent{
+  width: 100%;
+}
+

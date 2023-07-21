@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<head>
+  <title>Manager</title>
+  <link href="manager.css" rel="stylesheet" type="text/css" />
+  <link rel="shortcut icon" type="image/png" href="images/smalllogo.png">
+  <script src="manager.js"></script>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="/order">Place Order</a></li> 
+    </ul>
+    <ul class="logout">
+      <li><a href="/">Logout</a></li> 
+    </ul>
+    <img src="images/smoothieKing.png" alt="Logo" id="logo-image">
+  </nav>
+  <br />
+  <h2>Hello Manager!</h2> 
+  <div id="weather">Weather</div>
+  <br />
+  
+  <div class="dropdown">
+    <select id="dropdown-menu">
+      <option value="option0">Please Select...</option>
+      <option value="option1">Edit Inventory</option>
+      <option value="option2">Edit Menu</option>
+      <option value="option3">Run Reports</option>
+    </select>
+  </div> 
+
+  <div id="display-area">
+     
+    <div id="edit-inventory" style="display: none">
+      
+      <!-- HTML elements for editing inventory -->
+      <select id="inventoryitems-dropdown">
+        <option value="none">Select Inventory Item...</option>
+        <option value="ADD">ADD Inventory Item</option>
+        <% for(let i=0; i<inventoryitems.length; i++) { %>
+          <option value="<%= inventoryitems[i].invid %>"><%= inventoryitems[i].itemname %></option>
+    
+        <% } %>
+      </select>
+      <br>
+      ID: <input type="text" id="inventory-invid" disabled>
+      <br>
+      Item Name:<input type="text" id="inventory-itemname">
+      <br>
+      Cost Per:<input type="text" id="inventory-costper">
+      <br>
+      Number Remaining:<input type="text" id="inventory-numitems">
+      <br>
+      <b value="Delete" onclick="deleteItem()">Delete Item</b>
+      <b value="Edit" onclick="editItem()">Edit Item</b>
+      <b value="Add Item" onclick="addItem()">Add Item</b>
+
+    </div>
+    
+    <div id="edit-menu" style="display: none">
+      <!-- HTML elements for editing menu -->
+      <select id="menuitems-dropdown">
+        <option value="none">Select Menu Item...</option>
+        <option value="ADD">ADD Menu Item...</option>
+        <% for(let i=0; i<menuitems.length; i++) { %>
+          <option value="<%= menuitems[i].menuid %>"><%= menuitems[i].itemname %></option>
+        <% } %>
+      </select>
+      <br>
+      ID:<input type="text" id="menu-menuid" disabled>
+      <br>
+      Item Name:<input type="text" id="menu-itemname">
+      <br>
+      Price:<input type="text" id="menu-itemprice">
+      <br>
+      Ingredient List:<input type="text" id="menu-invlist">
+      <br>
+      Picture:<input type="text" id="menu-pics">
+      <br>
+      Category:<input type="text" id="menu-category">
+      <br>
+      <b value="Delete" onclick="deleteMenu()">Delete Item</b>
+      <b value="Edit" onclick="editMenu()">Edit Item</b>
+      <b value="Add Item" onclick="addMenu()">Add Item</b>
+    </div>
+
+    <div id="run-reports" style="display: none">
+      <!-- HTML elements for running reports -->
+    
+        <select id="report-dropdown">
+          <option value="option0">Please Select...</option>
+          <option value="option1">X Report</option>
+          <option value="option2">Z Report</option>
+          <option value="option3">Restock Report</option>
+          <option value="option4">Excess Report</option>
+        </select>
+        <input type="text" id="date-input">
+        <b onclick="runReport()">Generate Report</b>
+        <div id="output-report-container">
+          <div id="output-report">
+            <p>Report content goes here...</p>
+          </div>
+        </div>
+  
+    </div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const dropdownMenu = document.getElementById("dropdown-menu");
+  const displayArea = document.getElementById("display-area");
+
+  const editInventory = document.getElementById("edit-inventory");
+  const editMenu = document.getElementById("edit-menu");
+  const runReports = document.getElementById("run-reports");
+
+  const inventoryDropdown = document.getElementById("inventoryitems-dropdown");
+  const menuDropdown = document.getElementById("menuitems-dropdown");
+
+  dropdownMenu.addEventListener("change", () => {
+    const selectedOption = dropdownMenu.value;
+    displayArea.innerHTML = '';
+    if (selectedOption === "option1") {
+      editInventory.style.display = "block";
+      editMenu.style.display = "none";
+      runReports.style.display = "none";
+
+      // Move inventory dropdown inside display area 
+      displayArea.appendChild(editInventory);
+    } else if (selectedOption === "option2") {
+      editInventory.style.display = "none";
+      editMenu.style.display = "block";
+      runReports.style.display = "none";
+
+      // Move menu dropdown inside display area
+      displayArea.appendChild(editMenu);
+    } else if (selectedOption === "option3") {
+      editInventory.style.display = "none";
+      editMenu.style.display = "none";
+      runReports.style.display = "block";
+      displayArea.appendChild(runReports);
+    } else {
+      editInventory.style.display = "none";
+      editMenu.style.display = "none";
+      runReports.style.display = "none";
+    }
+  });
+
+  // Move inventory dropdown inside display area when selected
+  inventoryDropdown.addEventListener("change", () => {
+    const selectedOption = inventoryDropdown.value;
+    const invidInput = document.getElementById("inventory-invid");
+    const itemNameInput = document.getElementById("inventory-itemname");
+    const costPerInput = document.getElementById("inventory-costper");
+    const numItemsInput = document.getElementById("inventory-numitems");
+
+    if (selectedOption == "none" || selectedOption == "ADD") {
+      // Reset input values
+      invidInput.value = "";
+      itemNameInput.value = "";
+      costPerInput.value = "";
+      numItemsInput.value = "";
+    } else {
+      const query = `SELECT * FROM inventory WHERE invid = ${selectedOption}`;
+
+      fetch(`/orderquery?query=${encodeURIComponent(query)}`)
+        .then((response) => response.json())
+        .then((data) => {
+          // Handle the response data
+          if (data.length > 0) {
+            // Set input values based on the retrieved data
+            invidInput.value = data[0].invid;
+            itemNameInput.value = data[0].itemname;
+            costPerInput.value = data[0].costper;
+            numItemsInput.value = data[0].numitems;
+          } else {
+            // No data found, handle accordingly
+          }
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+    }
+  });
+
+  // Move menu dropdown inside display area when selected
+  menuDropdown.addEventListener("change", () => {
+  const selectedOption = menuDropdown.value;
+  const menuIdInput = document.getElementById("menu-menuid");
+  const itemNameInput = document.getElementById("menu-itemname");
+  const itemPriceInput = document.getElementById("menu-itemprice");
+  const invListInput = document.getElementById("menu-invlist");
+  const picsInput = document.getElementById("menu-pics");
+  const categoryInput = document.getElementById("menu-category");
+
+  if (selectedOption == "none" || selectedOption == "ADD") {
+    // Reset input values
+    menuIdInput.value = "";
+    itemNameInput.value = "";
+    itemPriceInput.value = "";
+    invListInput.value = "";
+    picsInput.value = "";
+    categoryInput.value = "";
+  } else {
+    const query = `SELECT * FROM menu WHERE menuid = ${selectedOption}`;
+
+    fetch(`/orderquery?query=${encodeURIComponent(query)}`)
+      .then((response) => response.json())
+      .then((data) => {
+        // Handle the response data
+        if (data.length > 0) {
+          // Set input values based on the retrieved data
+          menuIdInput.value = data[0].menuid;
+          itemNameInput.value = data[0].itemname;
+          itemPriceInput.value = data[0].itemprice;
+          invListInput.value = data[0].invlist;
+          picsInput.value = data[0].pics;
+          categoryInput.value = data[0].category;
+        } else {
+          // No data found, handle accordingly
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  }
+});
+});
+
+
+  </script>
+</body>

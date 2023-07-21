@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<head>
+  <title>Menu</title>
+  <link href="menu.css" rel="stylesheet" type="text/css" />
+  <link rel="shortcut icon" type="image/png" href="images/smalllogo.png">
+  <script src="menu.js"></script>
+</head>
+<body>
+    <div id="google_translate_element"></div>
+    <nav>
+      <ul>
+        <li><a href="/customer">Order</a></li> 
+      </ul>
+      <ul id="weather">Weather</ul>  
+      <img src="images/smoothieKing.png" alt="Logo" id="logo-image">
+    </nav>
+    <br>
+  
+    <div class="container">
+      <div class="left">
+        <div class="smoothie">
+          <h2>Smoothies</h2>
+          <ul>
+            <% for (var i in menuitems) { %>
+            <% if (menuitems[i].category == "Smoothie") { %>
+            <%= menuitems[i].itemname %> - <%= menuitems[i].itemprice %>
+            <br>
+            <% } %>
+            <% } %>
+          </ul>
+          <br>
+        </div>
+      </div>
+  
+      <div class="center">
+        <div class="pictures">
+          <img src="https://cdn.smoothieking.com/images/smoothies/cups-ingredients/sk-wellness-veggie-apple-kiwi-kale-with-ingredients.png" height="200" weigth="200" alt="Image 1">
+          <br>
+          <img src="https://cdn.smoothieking.com/images/smoothies/cups-ingredients/sk-take-a-break-banana-berry-treat-with-ingredients.png" height="200" weigth="200" alt="Image 2">
+          <br>
+          <img src="https://cdn.smoothieking.com/images/smoothies/cups-ingredients/sk-wellness-blueberry-heaven-with-ingredients.png" height="200" weigth="200" alt="Image 3">
+        </div>
+      </div>
+  
+      <div class="right">
+        <div class="snack">
+          <div class="snack_list">
+            <h2>Snacks</h2>
+            <ul>
+                <% for (var i in menuitems) { %>
+                <% if (menuitems[i].category == "Snack") { %>
+                <%= menuitems[i].itemname %> - <%= menuitems[i].itemprice %>
+                <br>
+                <% } %>
+                <% } %>
+            </ul>
+            <br>
+          </div>
+
+          <div class="snack_pic">
+            <img src="https://olo-images-live.imgix.net/26/2605a095ddb145af817eee56b3da4484.jpg?auto=format%2Ccompress&q=60&cs=tinysrgb&w=528&h=352&fit=fill&fm=png32&bg=transparent&s=2cffbe8249796b2dabb85c3df8f948d8" height="150" weigth="150" alt="Image 2">
+          </div>
+        </div>
+            <div class="protein">
+                <div class="protein_pic">
+                    <img src="https://cdn.smoothieking.com/images/smoothies/cups-ingredients/sk-fitness-coffee-high-protein-almond-mocha-with-ingredients.png" height="150" weigth="150" alt="Image 2">
+                </div>
+                <div class="protein_list">
+                    <h2>Protein Smoothies</h2>
+                    <ul>
+                      <% for (var i in menuitems) { %>
+                      <% if (menuitems[i].category == "Protein Smoothie") { %>
+                      <%= menuitems[i].itemname %> - <%= menuitems[i].itemprice %>
+                      <br>
+                      <% } %>
+                      <% } %>
+                    </ul>
+                </div>
+    
+        </div>
+        <div class="recovery">
+          <div class="recovery_list">
+            <h2>Recovery Smoothies</h2>
+            <ul>
+              <% for (var i in menuitems) { %>
+              <% if (menuitems[i].category == "Recovery Smoothie") { %>
+              <%= menuitems[i].itemname %> - <%= menuitems[i].itemprice %>
+              <br>
+              <% } %>
+              <% } %>
+            </ul>
+            <br>            
+          </div>
+        <div class="recover_pic">
+          <img src="https://cdn.smoothieking.com/images/smoothies/cups-ingredients/sk-fitness-the-activator-pineapple-with-ingredients.png" height="200" weigth="200" alt="Image 2">
+        </div>
+        </div>
+      </div>
+    </div>
+  </body>

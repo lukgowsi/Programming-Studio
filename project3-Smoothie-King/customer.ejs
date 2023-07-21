@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+  <title>Customer</title>
+  <link href="customer.css" rel="stylesheet" type="text/css" />
+  <link rel="shortcut icon" type="image/png" href="images/smalllogo.png">
+  <script src="customer.js"></script>
+</head>
+<body>
+   
+  <nav>
+    <ul>
+      <li><a href="/menu">Menu</a></li> 
+    </ul>
+    <div id="google_translate_element"></div>
+    <ul class="logout">
+      <li><button class="zoom-button" onclick="increaseSize()">Zoom In</button></li> 
+      <li><a href="/">Logout</a></li> 
+    </ul>
+    <img src="images/smoothieKing.png" alt="Logo" id="logo-image">
+  </nav>
+  <br>
+  <div class="container">
+    <div class="button-grid">
+      <% for (var i in menuitems) { %>
+        <button onclick="handleClick('<%= menuitems[i].itemname %>', '<%= menuitems[i].itemprice %>')" >
+          <img src="<%= menuitems[i].pics %>" alt="img">
+          <br>
+          <%= menuitems[i].itemname %>
+          <br>
+          $<%= menuitems[i].itemprice %>
+        </button>
+      <% } %>
+    </div> 
+    <div class="text-box">
+      <br>
+      <br>
+      <br>
+
+       
+      <h1>Order:</h1> 
+      <br>
+      <textarea disabled rows="10" ></textarea> 
+      <br>
+      <button onclick="handleDelete()">Delete</button>
+      <button onclick="handleOrder()">Place Order</button>  
+      <div class="totalPrice"></div>
+      
+
+      <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+      }
+      </script>
+      
+      <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    </div>
+  </div>
+</body>

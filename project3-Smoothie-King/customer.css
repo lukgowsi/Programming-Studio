@@ -1,0 +1,160 @@
+nav {
+  background-color: #f17878;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#logo-image {
+  width: 150px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+li {
+  margin: 0 10px;
+}
+
+.logout {
+  margin-left: auto;
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+a:hover {
+  background-color: white;
+  color: black;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  padding-top: 60px;
+}
+
+.button-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+}
+
+.button-grid button {
+  color: rgb(33, 30, 30);
+  font-weight: bold;
+  border: none;
+  padding: 1rem;
+  font-size: 1.2rem;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: 10px;
+}
+.button-grid button:hover {
+  background-color: #88daf3;
+}
+
+.button-grid button:nth-child(4),
+.button-grid button:nth-child(5),
+.button-grid button:nth-child(6) {
+  grid-row: 2;
+}
+
+.button-grid button:active {
+  animation-name: button-click;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in-out;
+}
+.button-grid button img {
+  max-width: 80%;
+  max-height: 80%;
+}
+@keyframes button-click {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.text-box {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40%;
+  padding: 1rem;
+  font-size: 1.2rem;
+  box-sizing: border-box;
+  text-align: center;
+  margin-right: 5%;
+  margin-top: 100px;
+}
+.text-box textarea {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  font-size: 1.2rem;
+}
+
+.text-box button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.text-box h1 {
+  padding: 1px;
+  margin: 1px;
+  border: none;
+}
+
+.increased-size {
+  font-size: 1.2rem;
+  transform: scale(1.2);
+}
+
+.zoom-button {
+  background-color: #61acf2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.zoom-button:hover {
+  background-color: #88daf3;
+}
